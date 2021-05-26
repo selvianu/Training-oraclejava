@@ -1,0 +1,23 @@
+package com.chainsys.util;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class Util {
+	public static void main(String args[]) throws ClassNotFoundException, SQLException {
+		Util.connection();
+	}
+
+	public static void connection() throws ClassNotFoundException, SQLException
+
+	{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		System.out.println("classname");
+		Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "system");
+		// connection.prepareStatement(sql);
+		System.out.println(" connection:  " + connection);
+
+	}
+
+}

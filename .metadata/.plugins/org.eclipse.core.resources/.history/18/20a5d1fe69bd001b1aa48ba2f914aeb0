@@ -1,0 +1,8 @@
+package com.chainsys.util;
+
+public class Util {
+	public static void main(String args[]) {
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+	}
+
+}

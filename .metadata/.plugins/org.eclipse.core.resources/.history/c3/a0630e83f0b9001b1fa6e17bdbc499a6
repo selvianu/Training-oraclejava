@@ -1,0 +1,12 @@
+package day1;
+
+public class Employee {
+	private int id;
+	private String name;
+	private int age;
+
+	public void print() {
+		System.out.println("id is: " + id + "name is : " + name);
+	}
+
+}

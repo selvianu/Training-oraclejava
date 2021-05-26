@@ -1,0 +1,11 @@
+package com.chainsys.product;
+
+import java.util.Date;
+
+public class Product {
+
+	private int id;
+	private String name;
+	private Date ExpiryDate;
+
+}

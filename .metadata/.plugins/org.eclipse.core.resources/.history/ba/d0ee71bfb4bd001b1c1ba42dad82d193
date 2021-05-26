@@ -1,0 +1,16 @@
+package com.chainsys.product.dao;
+
+import com.chainsys.product.Product;
+
+public interface ProductDAO {
+	public void save(Product product);
+
+	public Product findById(int id);
+
+	public void findAll();
+
+	public void Update(int id);
+
+	public void delete(int id);
+
+}

@@ -1,0 +1,6 @@
+package com.chainsys.product.dao;
+
+public interface ProductDAO {
+	public int add(Product);
+
+}

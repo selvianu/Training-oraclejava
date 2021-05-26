@@ -1,0 +1,14 @@
+package com.chainsys.util;
+
+public class Util {
+	public static void main(String args[]) {
+	}
+
+	public void connection() throws ClassNotFoundException
+
+	{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+
+	}
+
+}

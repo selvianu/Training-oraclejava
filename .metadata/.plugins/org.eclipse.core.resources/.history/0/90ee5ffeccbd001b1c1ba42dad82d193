@@ -1,0 +1,29 @@
+package test.dao;
+
+import model.Book;
+
+import java.util.Scanner;
+
+import dao.BookDAOImpl;
+
+public class TestBookInsert {
+
+	public static void main(String[] args) throws Exception {
+		Book b = new Book();
+		Scanner sc = new Scanner(System.in);
+		long id = sc.nextLong();
+		System.out.println("enter the id");
+		b.setId(id);
+		System.out.println("enter the name");
+		String name = sc.next();
+		b.setName(name);
+		System.out.println("enter the publications");
+		String publications = sc.next();
+		b.setPublication(publications);
+		System.out.println(b);
+
+		BookDAOImpl bd = new BookDAOImpl();
+		bd.insert(b);
+	}
+
+}

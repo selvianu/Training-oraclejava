@@ -1,0 +1,59 @@
+package com.chainsys.product.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Set;
+
+import com.chainsys.product.Product;
+import com.chainsys.util.Util;
+
+public class ProductDAOImple implements ProductDAO {
+
+	@Override
+	public void save(Product product) throws ClassNotFoundException, SQLException {
+		System.out.println("product saved through impl	" + product);
+		Connection con = Util.getConnection();
+
+		String query = "insert into product(product_id,product_name,expiry) values(?,?,to_date('2021/05/25','yyyy/mm/dd'))";
+		PreparedStatement p = con.prepareStatement(query);
+		p.setInt(1, product.getId());
+		p.setString(2, product.getName());
+		// p.setDate(3, product.getExpiryDate());
+		int rows = p.executeUpdate();
+		System.out.println("no of user added" + rows);
+
+	}
+
+	@SuppressWarnings("null")
+	@Override
+	public void findById(int id) throws ClassNotFoundException, SQLException {
+		Product product = null;
+		Connection con = Util.getConnection();
+		String query = "select * from product where product_id=?";
+		PreparedStatement p = con.prepareStatement(query);
+		p.setInt(1, product.getId());
+
+		
+
+	}
+
+	@Override
+	public void findAll() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void Update(int id) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

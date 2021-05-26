@@ -1,0 +1,51 @@
+package com.chainsys.product.dao;
+
+import java.util.ArrayList;
+import java.util.Set;
+
+import com.chainsys.product.Product;
+
+public class ProductDAOImple implements ProductDAO {
+	Product product = new Product();
+	public static Set<Product> productSet;productSet=new HashSet<>();
+	Product product1 = new Product(product.getId(), product.getName(), product.getExpiryDate());
+	Employee employee1 = new Employee(101, "Immanuel");
+	Employee employee2 = new Employee(102, "Saranya");
+	Employee employee3 = new Employee(103, "Prithivi");
+
+	@Override
+	public void save(Product product) {
+		System.out.println("product saved through impl	" + product);
+
+	}
+
+	@Override
+	public Product findById(int id) {
+		for (Product product : productSet) {
+			if (product.getId() == id) {
+				return product;
+			}
+		}
+		return null;
+
+	}
+
+	@Override
+	public void findAll() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void Update(int id) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

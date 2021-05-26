@@ -1,0 +1,18 @@
+package test.day1;
+
+import day1.Employee;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Employee e = new Employee();
+		e.setId(10);
+		e.setName("selvi");
+		e.setAge(18);
+		//System.out.println(e.getId() + e.getName() + e.getAge());
+
+	public String toString() {
+
+	}
+}
+}

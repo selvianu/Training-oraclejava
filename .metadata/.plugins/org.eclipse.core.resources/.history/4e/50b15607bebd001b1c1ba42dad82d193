@@ -1,0 +1,19 @@
+package test.dao;
+
+import model.Book;
+import dao.BookDAOImpl;
+
+public class TestBookInsert {
+
+	public static void main(String[] args) throws Exception {
+		Book b = new Book();
+		b.setId(220);
+		b.setName("OOAD");
+		b.setPublication("Head First");
+		System.out.println(b);
+
+		BookDAOImpl bd = new BookDAOImpl();
+		bd.insert(b);
+	}
+  
+}

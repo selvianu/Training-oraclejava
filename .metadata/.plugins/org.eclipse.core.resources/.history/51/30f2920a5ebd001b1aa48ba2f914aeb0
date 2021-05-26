@@ -1,0 +1,36 @@
+package com.chainsys.product.dao;
+
+import com.chainsys.product.Product;
+
+public class ProductDAOImple implements ProductDAO {
+
+	@Override
+	public void save(Product product) {
+		System.out.println("product saved through impl" + product);
+	}
+
+	@Override
+	public boolean findById(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void findAll() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void Update(int id) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

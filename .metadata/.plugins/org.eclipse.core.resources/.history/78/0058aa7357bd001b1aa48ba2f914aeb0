@@ -1,0 +1,20 @@
+package com.chainsys.product_test;
+
+import java.util.Scanner;
+
+import com.chainsys.product.Product;
+
+public class ProductTest {
+
+	public static void main(String[] args) {
+
+		Product product = new Product();
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter product id, name and product expiry date");
+		int id = scanner.nextInt();
+
+		product.setId(id);
+		System.out.println(product);
+	}
+
+}

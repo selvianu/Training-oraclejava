@@ -1,0 +1,5 @@
+CREATE DATABASE book_db;
+
+CREATE TABLE books (id INT AUTO_INCREMENT PRIMARY KEY, NAME VARCHAR(100) NOT NULL, cost INT NOT NULL, publication VARCHAR(100) NOT NULL);
+INSERT INTO books(NAME,cost,publication) VALUES("CourseTracker", 5000, "McGrawHills");
+SELECT * FROM books;

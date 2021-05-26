@@ -1,0 +1,17 @@
+package test.dao;
+
+import model.Book;
+
+import java.util.Scanner;
+
+import dao.BookDAOImpl;
+
+public class TestBookInsert {
+
+	public static void main(String[] args) throws Exception {
+		
+		BookDAOImpl bd = new BookDAOImpl();
+		bd.insert(b);
+	}
+
+}

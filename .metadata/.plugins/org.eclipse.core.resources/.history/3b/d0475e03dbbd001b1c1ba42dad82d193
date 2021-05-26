@@ -1,0 +1,22 @@
+package com.date.practise;
+
+import java.time.LocalDate;
+
+public class Student {
+	private int id;
+	private LocalDate dateOfBirth;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public LocalDate getDateOfBirth() {
+		return dateOfBirth;
+	}
+	public void setDateOfBirth(LocalDate dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+	
+
+}
