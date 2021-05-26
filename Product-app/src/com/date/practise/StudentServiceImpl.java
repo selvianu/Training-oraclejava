@@ -11,6 +11,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class StudentServiceImpl implements StudentService {
+
 	private static Connection con;
 	private static PreparedStatement pstmt;
 	private static ResultSet rs;
@@ -45,8 +46,20 @@ public class StudentServiceImpl implements StudentService {
 
 	@Override
 	public Student findById(int id) throws StudentNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
+
+		Student student = null;
+		try {
+			pstmt = con.prepareStatement("select * from student where id=?");
+			pstmt.setInt(1, id);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				student = new Student(rs.getInt("id"), rs.getDate("dateofbirth").toLocalDate());
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return student;
 	}
 
 	@Override
@@ -56,7 +69,7 @@ public class StudentServiceImpl implements StudentService {
 			pstmt.setInt(1, student.getId());
 			pstmt.setDate(2, Date.valueOf(student.getDateOfBirth()));
 			int records = pstmt.executeUpdate();
-			System.out.println(records+"record inserted in DB");
+			System.out.println(records + "record inserted in DB");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

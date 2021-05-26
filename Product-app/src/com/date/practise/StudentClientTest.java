@@ -22,12 +22,19 @@ public class StudentClientTest {
 			studentSet = service.findAll();
 			System.out.println(studentSet);
 			break;
+
+		case 2:
+			System.out.println("Find the Product By Id");
+			System.out.println("Enter the Product Id");
+			id = scanner.nextInt();
+			try {
+				Student student = service.findById(id);
+				System.out.println(student);
+			} catch (StudentNotFoundException e) {
+			}
+			break;
 		/*
-		 * case 2: System.out.println("Find the Product By Id");
-		 * System.out.println("Enter the Product Id"); id = scanner.nextInt(); try {
-		 * Product product = service.findById(id); System.out.println(product); } catch
-		 * (ProductNotFoundException e) { } break; case 3:
-		 * System.out.println("Update the Product Name Based on the Id"); date =
+		 * case 3: System.out.println("Update the Product Name Based on the Id"); date =
 		 * "06/05/2019"; dateFormat = DateTimeFormatter.ofPattern("MM/dd/yyyy"); Product
 		 * updateProduct = new Product(3, "noodles", LocalDate.parse(date, dateFormat));
 		 * try { service.update(updateProduct); productSet = service.findAll();
@@ -39,12 +46,12 @@ public class StudentClientTest {
 		case 4:
 			System.out.println("Adding a student");
 			System.out.println("enter id");
-			id=scanner.nextInt();
+			id = scanner.nextInt();
 			System.out.println("enter DOB");
-			date=scanner.next();
-		//	date = "06/05/2021";
+			date = scanner.next();
+			// date = "06/05/2021";
 			dateFormat = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-		Student newStudent = new Student(id,LocalDate.parse(date, dateFormat));
+			Student newStudent = new Student(id, LocalDate.parse(date, dateFormat));
 			service.save(newStudent);
 			studentSet = service.findAll();
 			System.out.println(studentSet);
@@ -53,11 +60,13 @@ public class StudentClientTest {
 		/*
 		 * case 5: System.out.println("Deleting a Product");
 		 * System.out.println("Enter the Product Id"); id = scanner.nextInt(); try {
-		 * service.delete(id); productSet = service.findAll();
-		 * System.out.println(productSet); } catch (ProductNotFoundException e) { }
-		 * default: break; } scanner.close(); }
+		 * service.delete(id); studentSet = service.findAll();
+		 * System.out.println(studentSet); } catch (StudentNotFoundException e) { }
 		 */
-
+		default:
+			break;
 		}
+		scanner.close();
 	}
+
 }
