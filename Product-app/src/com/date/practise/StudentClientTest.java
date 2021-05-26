@@ -33,15 +33,28 @@ public class StudentClientTest {
 			} catch (StudentNotFoundException e) {
 			}
 			break;
-		/*
-		 * case 3: System.out.println("Update the Product Name Based on the Id"); date =
-		 * "06/05/2019"; dateFormat = DateTimeFormatter.ofPattern("MM/dd/yyyy"); Product
-		 * updateProduct = new Product(3, "noodles", LocalDate.parse(date, dateFormat));
-		 * try { service.update(updateProduct); productSet = service.findAll();
-		 * System.out.println(productSet); } catch (ProductNotFoundException e) {
-		 * 
-		 * } break;
-		 */
+
+		case 3:
+			System.out.println("Update the student DOB Based on the Id");
+
+			System.out.println("enter id");
+			id = scanner.nextInt();
+			System.out.println("enter DOB");
+			date = scanner.next();
+			// date = "06/05/2021";
+			dateFormat = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+			Student newStudent = new Student(id, LocalDate.parse(date, dateFormat));
+			dateFormat = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+			Student updateStudent = new Student(id, LocalDate.parse(date, dateFormat));
+
+			try {
+				service.update(updateStudent);
+				studentSet = service.findAll();
+				System.out.println(studentSet);
+			} catch (StudentNotFoundException e) {
+
+			}
+			break;
 
 		case 4:
 			System.out.println("Adding a student");
@@ -51,8 +64,8 @@ public class StudentClientTest {
 			date = scanner.next();
 			// date = "06/05/2021";
 			dateFormat = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-			Student newStudent = new Student(id, LocalDate.parse(date, dateFormat));
-			service.save(newStudent);
+			Student newStudent1 = new Student(id, LocalDate.parse(date, dateFormat));
+			service.save(newStudent1);
 			studentSet = service.findAll();
 			System.out.println(studentSet);
 			break;

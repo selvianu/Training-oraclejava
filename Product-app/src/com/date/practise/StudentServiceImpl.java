@@ -80,8 +80,14 @@ public class StudentServiceImpl implements StudentService {
 
 	@Override
 	public void update(Student student) throws StudentNotFoundException {
-		// TODO Auto-generated method stub
-
+		try {
+			pstmt = con.prepareStatement("update student set dateofbirth =? where id=?");
+			pstmt.setDate(1, Date.valueOf(student.getDateOfBirth()));
+			pstmt.setInt(2, student.getId());
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
